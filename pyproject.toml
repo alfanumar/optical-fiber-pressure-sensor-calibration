@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "optical-fiber-pressure-sensor-calibration"
+version = "0.1.0"
+description = "A reproducible ADC calibration and validation workflow for an optical-fiber pressure sensor prototype"
+requires-python = ">=3.10"
+dependencies = [
+    "matplotlib>=3.7",
+    "numpy>=1.24",
+]
+
+[project.scripts]
+run-pressure-analysis = "sensor_calibration.report:main"
+generate-pressure-data = "sensor_calibration.generate_data:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
